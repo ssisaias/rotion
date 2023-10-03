@@ -1,5 +1,5 @@
 import { Command } from 'cmdk'
-import { File, MagnifyingGlass } from 'phosphor-react'
+import { File, MagnifyingGlass } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 
 export function SearchBar() {

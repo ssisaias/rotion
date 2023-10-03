@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { DotsThree } from 'phosphor-react'
+import { DotsThree } from '@phosphor-icons/react'
 import { ReactNode } from 'react'
 
 interface LinkProps {

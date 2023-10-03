@@ -1,4 +1,4 @@
-import { CaretDown, User } from 'phosphor-react'
+import { CaretDown, User } from '@phosphor-icons/react'
 
 export function Profile() {
   const isAuthenticated = false

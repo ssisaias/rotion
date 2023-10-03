@@ -1,9 +1,10 @@
 import * as Navigation from './Navigation'
 import clsx from 'clsx'
-import { CaretDoubleLeft } from 'phosphor-react'
+
 import { CreatePage } from './CreatePage'
 import { Profile } from './Profile'
 import { Search } from './Search'
+import { CaretDoubleLeft } from '@phosphor-icons/react'
 
 export function Sidebar() {
   const isMacOS = process.platform === 'darwin'

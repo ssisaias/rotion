@@ -1,4 +1,4 @@
-import { Plus } from 'phosphor-react'
+import { Plus } from '@phosphor-icons/react'
 
 export function CreatePage() {
   return (

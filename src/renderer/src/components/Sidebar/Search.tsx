@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from 'phosphor-react'
+import { MagnifyingGlass } from '@phosphor-icons/react'
 
 export function Search() {
   return (

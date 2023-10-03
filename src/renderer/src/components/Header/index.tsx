@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { Code, CaretDoubleRight, TrashSimple } from 'phosphor-react'
+import { Code, CaretDoubleRight, TrashSimple } from '@phosphor-icons/react'
 import * as Breadcrumbs from './Breadcrumbs'
 
 export function Header() {
