@@ -10,6 +10,13 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     backgroundColor: '#17141f',
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#1e1a29',
+      symbolColor: '#5f596e',
+      height: 10,
+    },
+    trafficLightPosition: { x: 0, y: 0 },
     icon: join(__dirname, '../../resources/icon.png'),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
