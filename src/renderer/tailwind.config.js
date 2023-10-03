@@ -1,4 +1,4 @@
-const plugin = require('tailwindcss/plugin')
+import plugin from 'tailwindcss/plugin'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -21,6 +21,20 @@ module.exports = {
           800: '#1e1a29',
           900: '#17141f',
         },
+      },
+      keyframes: {
+        slideIn: {
+          from: { width: 0 },
+          to: { width: 'var(--radix-collapsible-content-width)' },
+        },
+        slideOut: {
+          to: { width: 0 },
+          from: { width: 'var(--radix-collapsible-content-width)' },
+        },
+      },
+      animation: {
+        slideIn: 'slideIn 0.2s',
+        slideOut: 'slideOut 0.2s',
       },
     },
   },
