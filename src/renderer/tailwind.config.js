@@ -25,6 +25,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.region-drag': {
