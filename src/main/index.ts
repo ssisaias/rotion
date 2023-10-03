@@ -1,6 +1,7 @@
 import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import { createFileRoute, createURLRoute } from 'electron-router-dom'
 
 function createWindow(): void {
   // Create the browser window.
@@ -33,12 +34,20 @@ function createWindow(): void {
     return { action: 'deny' }
   })
 
+  // Don't forget to check if the port is the same as your dev server
+  const devServerURL = createURLRoute('http://localhost:5173/', 'main')
+
+  const fileRoute = createFileRoute(
+    join(__dirname, '../renderer/index.html'),
+    'main',
+  )
+
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env.ELECTRON_RENDERER_URL) {
-    mainWindow.loadURL(process.env.ELECTRON_RENDERER_URL)
+    mainWindow.loadURL(devServerURL)
   } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+    mainWindow.loadFile(...fileRoute)
   }
 }
 
