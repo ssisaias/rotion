@@ -1,6 +1,7 @@
 import { ipcMain } from 'electron'
+import { IPC } from '@shared/constants/ipc'
 
-ipcMain.handle('fetch-documents', async () => {
+ipcMain.handle(IPC.DOCUMENTS.FETCH_ALL, async () => {
   return [
     { id: '1', title: 'Ignite' },
     { id: '2', title: 'Discover' },
