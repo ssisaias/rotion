@@ -33,6 +33,7 @@
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "electron-router-dom": "^1.0.5",
+    "electron-store": "^8.1.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.16.0"
   },
