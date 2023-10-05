@@ -1,7 +1,7 @@
-import { Menu, Tray, app, nativeImage } from 'electron'
+import { BrowserWindow, Menu, Tray, app, nativeImage } from 'electron'
 import path from 'node:path'
 
-app.whenReady().then(() => {
+export function createTray(window: BrowserWindow) {
   const icon = nativeImage.createFromPath(
     path.resolve(__dirname, '../../resources/rotionTemplate.png'),
   )
@@ -16,14 +16,38 @@ app.whenReady().then(() => {
       type: 'separator',
     },
     {
-      label: 'Rotion',
-      enabled: true,
+      label: 'Novo documento',
+      click: () => {
+        window.webContents.send('new-document')
+      },
     },
     {
-      type: 'checkbox',
-      label: 'dark theme',
+      type: 'separator',
+    },
+    {
+      label: 'Documentos recentes',
+      enabled: false,
+    },
+    {
+      label: 'Discover',
+      accelerator: 'CommandOrControl+1',
+    },
+    {
+      label: 'Ignote',
+      accelerator: 'CommandOrControl+2',
+    },
+    {
+      label: 'Untitledd',
+      accelerator: 'CommandOrControl+3',
+    },
+    {
+      type: 'separator',
+    },
+    {
+      label: 'Sair',
+      role: 'quit',
     },
   ])
 
   tray.setContextMenu(menu)
-})
+}

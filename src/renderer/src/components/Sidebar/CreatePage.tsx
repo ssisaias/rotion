@@ -1,9 +1,13 @@
 import { Plus } from '@phosphor-icons/react'
+import { useEffect } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
+import { useNavigate } from 'react-router-dom'
 import { Document } from '~/src/shared/types/ipc'
 
 export function CreatePage() {
   const queryClient = useQueryClient()
+  const navigate = useNavigate()
+
   const { isLoading: isCreatingNewDocument, mutateAsync: createDocument } =
     useMutation(
       async () => {
@@ -20,9 +24,22 @@ export function CreatePage() {
               return [data]
             }
           })
+
+          navigate(`/documents/${data.id}`)
         },
       },
     )
+
+  useEffect(() => {
+    function onNewDocument() {
+      createDocument()
+    }
+    const unsub = window.api.onNewDocumentRequest(onNewDocument)
+
+    return () => {
+      unsub()
+    }
+  }, [])
 
   return (
     <>

@@ -5,7 +5,7 @@ import { createFileRoute, createURLRoute } from 'electron-router-dom'
 
 import './ipc'
 import './store'
-import './tray'
+import { createTray } from './tray'
 
 function createWindow(): void {
   // Create the browser window.
@@ -28,6 +28,8 @@ function createWindow(): void {
       sandbox: false,
     },
   })
+
+  createTray(mainWindow)
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
