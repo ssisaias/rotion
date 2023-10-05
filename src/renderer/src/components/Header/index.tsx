@@ -4,7 +4,7 @@ import * as Breadcrumbs from './Breadcrumbs'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useMutation, useQueryClient } from 'react-query'
-import { Document } from '@src/shared/types/ipc'
+import { Document } from '@shared/types/ipc'
 
 interface HeadrProps {
   isSidebarOpen: boolean
