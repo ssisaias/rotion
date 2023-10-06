@@ -1,4 +1,4 @@
-import { BrowserWindow, Menu, Tray, app, nativeImage } from 'electron'
+import { BrowserWindow, Menu, Tray, nativeImage } from 'electron'
 import path from 'node:path'
 
 export function createTray(window: BrowserWindow) {
