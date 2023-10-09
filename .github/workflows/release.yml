@@ -33,7 +33,7 @@ jobs:
         run: sudo apt-get install libarchive-tools rpm
 
       - name: Release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
+        uses: coparse-inc/action-electron-builder@v1.0.0
         with:
           github_token: ${{ secrets.github_token }}
           release: true
