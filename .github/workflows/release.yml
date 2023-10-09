@@ -32,12 +32,21 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu-latest')
         run: sudo apt-get install libarchive-tools rpm
 
-      - name: Install dependencies
-        run: yarn
-
-      - name: Release Electron app
-        uses: njzydark/action-electron-builder-pnpm@1.2.0
+      - uses: pnpm/action-setup@v2
         with:
-          github_token: ${{ secrets.github_token }}
-          package_manager: pnpm
-          release: true
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build windows
+        if: startsWith(matrix.os, 'windows-latest')
+        run: pnpm build:win
+
+      - name: Build linux
+        if: startsWith(matrix.os, 'ubuntu-latest')
+        run: pnpm build:linux
+
+      - name: Build macos
+        if: startsWith(matrix.os, 'macos-latest')
+        run: pnpm build:macos
