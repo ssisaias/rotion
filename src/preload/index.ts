@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { contextBridge, ipcRenderer } from 'electron'
-import { IPC } from '@shared/constants/ipc'
+import { IPC } from '../shared/constants/ipc'
 import {
   CreateDocumentResponse,
   DeleteDocumentRequest,
@@ -8,7 +8,7 @@ import {
   FetchDocumentRequest,
   FetchDocumentResponse,
   UpdateDocumentRequest,
-} from '@shared/types/ipc'
+} from '../shared/types/ipc'
 
 declare global {
   export interface Window {

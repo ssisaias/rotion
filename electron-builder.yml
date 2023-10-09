@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: rotion
+appId: com.isaiasdevlog.rotion
+productName: Rotion
 directories:
   buildResources: build
 files:
@@ -31,13 +31,10 @@ dmg:
 linux:
   target:
     - AppImage
-    - snap
     - deb
-  maintainer: electronjs.org
+  maintainer: isaiasdevlog.com
+  synopsis: ${description}
   category: Utility
 appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
-publish:
-  provider: generic
-  url: https://example.com/auto-updates

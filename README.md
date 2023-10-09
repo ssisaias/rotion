@@ -1,9 +1,9 @@
 ## Rotion - an Electron based notion clone
 
-This is a simple - offline clone of the popular note taking app Notion.
+A simple - offline - clone of the popular note taking app Notion.
 It is built using Electron and React.
 
-Main features and libs are:
+Main features and libs:
 
  - Electron + Vite + ReactJs
  - TailwindCSS
