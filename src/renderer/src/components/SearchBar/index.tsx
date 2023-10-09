@@ -7,7 +7,9 @@ export function SearchBar() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === 'k' && e.metaKey) {
+      if (process.platform === 'darwin' && e.key === 'k' && e.metaKey) {
+        setOpen((state) => !state)
+      } else if ((e.key === 'k' || e.key === 'p') && e.ctrlKey) {
         setOpen((state) => !state)
       }
     }
