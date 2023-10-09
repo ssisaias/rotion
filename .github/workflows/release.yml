@@ -32,8 +32,10 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu-latest')
         run: sudo apt-get install libarchive-tools rpm
 
+      - name: Install dependencies
+        run: yarn
+
       - name: Release Electron app
-        uses: coparse-inc/action-electron-builder@v1.6.0
-        with:
-          github_token: ${{ secrets.github_token }}
-          release: true
+        run: yarn run release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
