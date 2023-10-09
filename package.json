@@ -1,7 +1,7 @@
 {
   "name": "rotion",
   "productName": "Rotion",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A simple clone of the popular note taking app Notion.",
   "main": "./out/main/index.js",
   "author": "isaiasdevlog.com",
