@@ -8,6 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
 
@@ -49,4 +50,4 @@ jobs:
 
       - name: Build macos
         if: startsWith(matrix.os, 'macos-latest')
-        run: pnpm build:macos
+        run: pnpm build:mac
