@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [windows-latest]
 
     steps:
       - name: Checkout
@@ -42,12 +42,7 @@ jobs:
 
       - name: Build windows
         if: startsWith(matrix.os, 'windows-latest')
-        run: pnpm build:win
-
-      - name: Build linux
-        if: startsWith(matrix.os, 'ubuntu-latest')
-        run: pnpm build:linux
-
-      - name: Build macos
-        if: startsWith(matrix.os, 'macos-latest')
-        run: pnpm build:mac
+        run:  |
+          pnpm build:win
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
