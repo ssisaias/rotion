@@ -54,6 +54,6 @@ jobs:
 
       - name: Build macos
         if: startsWith(matrix.os, 'macos-latest')
-        run: pnpm build:max
+        run: pnpm build:mac
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
